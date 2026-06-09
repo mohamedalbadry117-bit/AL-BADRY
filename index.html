@@ -8,69 +8,244 @@
         :root {
             --primary: #0f172a;
             --accent: #2563eb;
+            --accent-hover: #1d4ed8;
             --text: #334155;
             --bg: #f8fafc;
+            --card-bg: #ffffff;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
-        .container { max-width: 600px; background: white; margin: 30px auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        header { text-align: center; margin-bottom: 30px; }
-        header img { height: 85px; width: auto; object-fit: contain; margin-bottom: 15px; }
-        h1 { color: var(--primary); font-size: 24px; margin-bottom: 8px; }
-        p { color: #64748b; font-size: 14px; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; color: var(--primary); font-weight: 600; font-size: 14px; }
-        input, select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; outline: none; transition: border 0.2s; }
-        input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
-        button { width: 100%; padding: 14px; background-color: #25d366; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s; }
-        button:hover { background-color: #20ba56; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* الهيدر واللوجو */
+        header {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        header img {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* قسم مميزات المكتب والخدمات */
+        .features-section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .features-section h2 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        /* كرت الاستمارة */
+        .form-container {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .form-container .form-subtitle {
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            background-color: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #20ba56;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #64748b;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
     <header>
         <img src="logo.png" alt="لوجو البدري">
-        <h1>البدري للدراسة في الخارج</h1>
-        <p>سجل بياناتك الآن وسنقوم بالتواصل معك لتأمين قبولك الجامعي في مصر</p>
+        <h1>مكتب البدري للدراسة في الخارج</h1>
+        <p>بوابتك المضمونة لتأمين القبولات الجامعية والسكن للطلاب السودانيين في جمهورية مصر العربية</p>
     </header>
 
-    <form id="regForm" onsubmit="event.preventDefault(); sendToWhatsApp();">
-        <div class="form-group">
-            <label for="name">الاسم الكامل للطالب</label>
-            <input type="text" id="name" placeholder="اكتب اسمك الثلاثي أو الرباعي" required>
+    <div class="main-content">
+        
+        <div class="features-section">
+            <h2>لماذا تختار مكتب البدري؟</h2>
+            <ul class="features-list">
+                <li>تأمين قبولات جامعية سريعة ومضمونة في كافة الجامعات المصرية (الحكومية والخاصة).</li>
+                <li>استخراج وتوثيق كافة الملفات والأوراق المطلوبة للتقديم دون عناء.</li>
+                <li>توفير وتنسيق السكن الطلابي المريح والقريب من مقار الجامعات.</li>
+                <li>إشراف ومتابعة مستمرة للطالب منذ وصوله المطار وحتى انتظام دراسته.</li>
+            </ul>
         </div>
 
-        <div class="form-group">
-            <label for="phone">رقم الهاتف (واتساب)</label>
-            <input type="tel" id="phone" placeholder="مثال: 249900000000 أو 201000000000" required>
+        <div class="form-container">
+            <h2>استمارة التقديم الإلكتروني</h2>
+            <p class="form-subtitle">الرجاء إدخال بياناتك بدقة وسيتم تحويلك مباشرة لإرسال الطلب</p>
+
+            <form id="regForm" onsubmit="event.preventDefault(); sendToWhatsApp();">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل للطالب</label>
+                    <input type="text" id="name" placeholder="اكتب الاسم الرباعي كما هو في جواز السفر" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم هاتف الطالب (واتساب)</label>
+                    <input type="tel" id="phone" placeholder="مثال: 249900000000 أو 0900000000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cert">نوع الشهادة الثانوية</label>
+                    <select id="cert" required>
+                        <option value="" disabled selected>اختر نوع الشهادة</option>
+                        <option value="شهادة سودانية">شهادة سودانية</option>
+                        <option value="شهادة مصرية">شهادة مصرية</option>
+                        <option value="شهادة عربية / خليجية">شهادة عربية / خليجية</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="percentage">النسبة المئوية (%)</label>
+                    <input type="number" step="0.01" id="percentage" placeholder="مثال: 84.50" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="branch">التخصص المرغوب دراسته</label>
+                    <input type="text" id="branch" placeholder="مثال: هندسة حاسوب، طب بشري، إدارة أعمال" required>
+                </div>
+
+                <button type="submit">
+                    إرسال الطلب وتأكيد البيانات عبر الواتساب
+                </button>
+            </form>
         </div>
 
-        <div class="form-group">
-            <label for="cert">نوع الشهادة الثانوية</label>
-            <select id="cert" required>
-                <option value="" disabled selected>اختر نوع الشهادة</option>
-                <option value="شهادة سودانية">شهادة سودانية</option>
-                <option value="شهادة مصرية">شهادة مصرية</option>
-                <option value="شهادة عربية / خليجية">شهادة عربية / خليجية</option>
-            </select>
-        </div>
+    </div>
 
-        <div class="form-group">
-            <label for="percentage">النسبة المئوية (%)</label>
-            <input type="number" step="0.01" id="percentage" placeholder="مثال: 85.5" required>
-        </div>
-
-        <div class="form-group">
-            <label for="branch">التخصص المرغوب دراسته</label>
-            <input type="text" id="branch" placeholder="مثال: هندسة حاسوب، طب بشري، إدارة أعمال" required>
-        </div>
-
-        <button type="submit">
-            إرسال الطلب عبر الواتساب دقيقة
-        </button>
-    </form>
-</div>
+    <footer>
+        <p>&copy; 2026 مكتب البدري للدراسة في الخارج. جميع الحقوق محفوظة.</p>
+    </footer>
 
 <script>
 function sendToWhatsApp() {
@@ -90,14 +265,14 @@ function sendToWhatsApp() {
     // تنسيق نص الرسالة الحيجيك في شاتك
     const text = `طلب تقديم جديد - مكتب البدري:\n\n` +
                  `📝 الاسم: ${name}\n` +
-                 `📞 الهاتف: ${studentPhone}\n` +
+                 `📞 هاتف الطالب: ${studentPhone}\n` +
                  `🎓 الشهادة: ${cert}\n` +
                  `📊 النسبة: ${percentage}%\n` +
                  `✨ التخصص المرغوب: ${branch}\n\n` +
                  `الدولة المطلوبة: جمهورية مصر العربية 🇪🇬`;
 
-    // غيّر الرقم التحت دا (2499XXXXXXXX) لرقمك الحقيقي بدون أصفار ولا زائد
-    const myPhone = "2499XXXXXXXX"; 
+    // تم تثبيت رقمك المصري المطلوب هنا مباشرة وبشكل صحيح
+    const myPhone = "201019066030"; 
     
     const whatsappUrl = `https://wa.me/${myPhone}?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
@@ -106,3 +281,4 @@ function sendToWhatsApp() {
 
 </body>
 </html>
+
