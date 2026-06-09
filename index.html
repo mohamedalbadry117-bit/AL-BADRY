@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البدري للدراسة في الخارج</title>
+    <!-- خط القاهرة المتميز -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2=family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات للواتساب والوجهات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* التنسيق العام */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* الهيدر وقسم اللوجو الفخم */
+        header {
+            background-color: #0f2c59; /* أزرق داكن فخم */
+            color: #fff;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 2px solid #dac0a3;
+            padding-left: 15px;
+        }
+        .logo-icon {
+            background-color: #dac0a3;
+            color: #0f2c59;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(218, 192, 163, 0.4);
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #dac0a3;
+            letter-spacing: 0.5px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 25px;
+        }
+        nav ul li a {
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #dac0a3;
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 650px;
+            color: #f0f0f0;
+        }
+        .btn {
+            background-color: #dac0a3;
+            color: #0f2c59;
+            padding: 12px 35px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background-color: #fff;
+            color: #0f2c59;
+        }
+
+        /* الأقسام العامة */
+        section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+        section h2.section-title {
+            color: #0f2c59;
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        section h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background-color: #dac0a3;
+            margin: 10px auto 0;
+        }
+
+        /* كروت الوجهات والخدمات */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: #fff;
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #0f2c59;
+        }
+        .card i {
+            font-size: 35px;
+            color: #dac0a3;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            color: #0f2c59;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* فورم التقديم */
+        .form-section {
+            background-color: #eadbc8;
+            color: #0f2c59;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            text-align: right;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #0f2c59;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #fbfbfb;
+        }
+        .form-group select:disabled {
+            background-color: #eee;
+            color: #555;
+            cursor: not-allowed;
+        }
+        form .btn-submit {
+            background-color: #0f2c59;
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        form .btn-submit:hover {
+            background-color: #1d4480;
+        }
+
+        /* قسم تواصل معنا والواتساب */
+        .contact-section {
+            background-color: #fff;
+        }
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1ebd58;
+            transform: scale(1.05);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #0f2c59;
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            border-top: 3px solid #dac0a3;
+        }
+
+        /* التوافق مع الموبايل */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; gap: 15px; }
+            .logo-box { border-left: none; padding-left: 0; flex-direction: column; gap: 5px; }
+            nav ul { margin-top: 5px; }
+            nav ul li { margin: 0 10px; }
+            .hero h2 { font-size: 30px; }
+            .hero p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر مع اللوجو الفخم بالاسم طوالي -->
+    <header>
+        <div class="logo-box" style="display: flex; align-items: center; gap: 15px; border-left: none;">
+    <!-- غيرنا الارتفاع من 55 لـ 85 عشان يكبّر اللوجو، وممكن تزيد الرقم لو داير أكبر -->
+    <img src="logo.png" alt="لوجو البدري" style="height: 85px; width: auto; object-fit: contain;">
+    <div class="logo-text" style="font-size: 28px;">البدري للدراسة في الخارج</div>
+</div>
+
+
+        <nav>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#destinations">الوجهات</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#apply">قدم الآن</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- القسم الرئيسي للواجهة -->
+    <section class="hero">
+        <h2>بوابتك الأكاديمية نحو مستقبل أفضل</h2>
+        <p>نرافقك خطوة بخطوة لتأمين قبولك الجامعي وتسهيل كافة إجراءاتك للدراسة في أرقى الجامعات العالمية.</p>
+        <a href="#apply" class="btn">ابدأ التقديم المبدئي</a>
+    </section>
+
+    <!-- قسم أبرز الوجهات الدراسية (موجود لتوضيح الخيارات) -->
+    <section id="destinations">
+        <h2 class="section-title">أبرز الوجهات الدراسية</h2>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fas fa-university"></i>
+                <h3>جمهورية مصر العربية</h3>
+                <p>خيارات أكاديمية واسعة، تسهيلات متميزة، وبيئة تعليمية تناسب تطلعاتك.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>ماليزيا</h3>
+                <p>تعليم حديث ومواكب بأحدث التقنيات العالمية وتكلفة معيشية ملائمة.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-award"></i>
+                <h3>تركيا</h3>
+                <p>جامعات ذات تصنيف عالمي متقدم وفرص قوية للمنح الدراسية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services" style="background-color: #f0f0f0;">
+        <h2 class="section-title">خدماتنا المتميزة</h2>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fas fa-file-invoice"></i>
+                <h3>تأمين القبولات</h3>
+                <p>تحصيل قبولك في أسرع وقت ممكن ومن جامعات معترف بها رسمياً.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-passport"></i>
+                <h3>الإجراءات والتسهيلات</h3>
+                <p>متابعة وتجهيز ملفات التسجيل والتوثيق بدقة واحترافية عالية.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-comments"></i>
+                <h3>الاستشارات المجانية</h3>
+                <p>توجيه أكاديمي متكامل لاختيار التخصص الأنسب لمسيرتك المهنية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- فورم التقديم المبدئي (مصر فقط المتاحة للتسجيل) -->
+    <section id="apply" class="form-section">
+        <h2 class="section-title">طلب تقديم مبدئي</h2>
+        <form action="#" method="POST" onsubmit="alert('تم استلام طلبك بنجاح! سيتواصل معك فريق البدري قريباً عبر الواتساب.'); return false;">
+            <div class="form-group">
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name" required placeholder="أدخل اسمك الثلاثي">
+            </div>
+            <div class="form-group">
+                <label for="phone">رقم الهاتف (واتساب):</label>
+                <input type="tel" id="phone" required placeholder="مثال: 00249...">
+            </div>
+            <div class="form-group">
+                <label for="degree">المؤهل الحالي:</label>
+                <select id="degree">
+                    <option>شهادة ثانوية</option>
+                    <option>بكالوريوس (طلب ماستر)</option>
+                    <option>مؤهل آخر</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="destination">الوجهة المتاحة للتسجيل حالياً:</label>
+                <select id="destination" disabled>
+                    <option selected>جمهورية مصر العربية</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">إرسال الطلب</button>
+        </form>
+    </section>
+
+    <!-- قسم تواصل معنا عبر الواتساب طوالي -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">تواصل معنا مباشرة</h2>
+        <p style="font-size: 18px; margin-bottom: 10px; color: #555;">لأي استفسارات عامة أو لمتابعة طلبك، يمكنك التحدث معنا مباشرة:</p>
+        
+        <!-- حط رقم الواتساب الحقيقي بتاعك مكان الأرقام دي: 00249123456789 -->
+        <a href="https://wa.me/00249123456789" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+            تواصل عبر الواتساب طوالي
+        </a>
+    </section>
+
+    <!-- الفوتر الأخير -->
+    <footer>
+        <p>&copy; 2026 البدري للدراسة في الخارج. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
