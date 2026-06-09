@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>البدري للدراسة في الخارج</title>
+    
+    <meta property="og:title" content="مكتب البدري للدراسة في الخارج">
+    <meta property="og:description" content="بوابتك المضمونة لتأمين القبولات الجامعية والسكن للطلاب السودانيين في جمهورية مصر العربية.">
+    <meta property="og:image" content="https://mohamedalbadry117-bit.github.io/AL-BADRY/logo.png">
+    <meta property="og:url" content="https://mohamedalbadry117-bit.github.io/AL-BADRY/">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2=family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
@@ -312,7 +319,7 @@
             <div class="card">
                 <i class="fas fa-award"></i>
                 <h3>تركيا</h3>
-                <p>جامعات ذات تصنيف عالمي متتقدم وفرص قوية للمنح الدراسية.</p>
+                <p>جامعات ذات تصنيف عالمي متقدم وفرص قوية للمنح الدراسية.</p>
             </div>
         </div>
     </section>
@@ -387,14 +394,12 @@
         let studentPhone = document.getElementById('phone').value.trim();
         const studentDegree = document.getElementById('degree').value;
 
-        // تنظيف رقم الطالب من الـ + أو الـ 00 لو كتبهم عشان يوصلك نضيف وسليم
         if (studentPhone.startsWith('+')) {
             studentPhone = studentPhone.substring(1);
         } else if (studentPhone.startsWith('00')) {
             studentPhone = studentPhone.substring(2);
         }
 
-        // تنسيق الرسالة اللي حتوصلك في شاتك
         const messageText = `طلب تقديم مبدئي جديد - مكتب البدري:\n\n` +
                             `👤 الاسم الكامل: ${studentName}\n` +
                             `📞 رقم هاتف الطالب: ${studentPhone}\n` +
@@ -404,7 +409,6 @@
         const myNumber = "201019066030";
         const whatsappUrl = `https://wa.me/${myNumber}?text=${encodeURIComponent(messageText)}`;
         
-        // فتح شات الواتساب بتاعك طوالي مع الطالب
         window.open(whatsappUrl, '_blank');
     }
     </script>
